@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class Result extends React.Component {
   static propTypes = {
-    isTicketWon: PropTypes.bool,
+    message: PropTypes.string,
   };
 
   render() {
@@ -15,7 +15,7 @@ class Result extends React.Component {
           <div style={{padding: '8px'}}>
             <div>Билет 1</div>
             <div className='FieldStyle W3'>
-              {this.props.isTicketWon ? 'Ого, вы выиграли! Поздравляем!' : 'Увы, вы проиграли.'}
+              {this.props.message}
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@ class Result extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    isTicketWon: state.isTicketWon,
+    message: state.message,
   };
 };
 
